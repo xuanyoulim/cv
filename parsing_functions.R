@@ -49,7 +49,7 @@ strip_links_from_cols <- function(data, cols_to_strip){
 print_section <- function(position_data, section_id){
   position_data %>% 
     filter(section == section_id) %>% 
-    arrange(desc(end)) %>% 
+    arrange(order) %>% 
     mutate(id = 1:n()) %>% 
     pivot_longer(
       starts_with('description'),
@@ -65,9 +65,9 @@ print_section <- function(position_data, section_id){
     filter(description_num == 'description_1') %>% 
     mutate(
       timeline = ifelse(
-        is.na(start) | start == end,
-        end,
-        glue('{end} - {start}')
+        is.na(end),
+        glue('PRESENT - {start_month} {start}'),
+        glue('{end_month} {end} - {start_month} {start}')
       ),
       description_bullets = map_chr(descriptions, ~paste('-', ., collapse = '\n')),
     ) %>% 
@@ -76,9 +76,9 @@ print_section <- function(position_data, section_id){
     glue_data(
       "### {title}",
       "\n\n",
-      "{loc}",
-      "\n\n",
       "{institution}",
+      "\n\n",
+      "{loc}",
       "\n\n",
       "{timeline}", 
       "\n\n",
