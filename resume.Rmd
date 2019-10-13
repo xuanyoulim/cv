@@ -36,7 +36,7 @@ position_data <- read_csv('positions.csv') %>%
     # Build some custom sections by collapsing others
     section = case_when(
       section %in% c('uw_positions', 'writing_positions', 'tech_positions') ~ 'positions', 
-      #section %in% c('data_science_writings', 'by_me_press') ~ 'writings',
+      section %in% c('uw_projects', '42_projects', 'side_projects') ~ 'projects',
       TRUE ~ section
    )
   ) 
@@ -48,7 +48,7 @@ Aside
 ================================================================================
 
 
-![logo](beta_dist.png){width=100%}
+<!-- ![logo](beta_dist.png){width=100%} -->
 
 Contact {#contact}
 --------------------------------------------------------------------------------
@@ -83,15 +83,15 @@ build_skill_bars(skills)
 
 
 
-Open Source Contributions {#open-source}
---------------------------------------------------------------------------------
+<!-- Open Source Contributions {#open-source} -->
+<!-- -------------------------------------------------------------------------------- -->
 
-All projects available at `github.com/nstrayer/<name>`
+<!-- All projects available at `github.com/nstrayer/<name>` -->
 
 
-- `shinysense`: R package to use sensor data in Shiny apps
-- `tuftesque`: Hugo theme (behind LiveFreeOrDichotomize.com)
-- `slid3r`: D3 add-on for fully svg slider inputs
+<!-- - `shinysense`: R package to use sensor data in Shiny apps -->
+<!-- - `tuftesque`: Hugo theme (behind LiveFreeOrDichotomize.com) -->
+<!-- - `slid3r`: D3 add-on for fully svg slider inputs -->
 
 
 More info {#more-info}
@@ -140,16 +140,16 @@ position_data %>% print_section('education')
 ```
 
 
-<!-- Selected Projects {data-icon=file} -->
-<!-- -------------------------------------------------------------------------------- -->
+Selected Projects {data-icon=file}
+--------------------------------------------------------------------------------
 
 
-<!-- ```{r} -->
-<!-- position_data %>% print_section('projects') -->
-<!-- ``` -->
+```{r}
+position_data %>% print_section('projects')
+```
 
 
-Selected Job Experiences {data-icon=briefcase}
+Selected Experiences {data-icon=briefcase}
 --------------------------------------------------------------------------------
 
 ```{r}
