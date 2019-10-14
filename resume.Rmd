@@ -20,7 +20,7 @@ library(tidyverse)
 library(glue)
 
 # Set this to true to have links turned into footnotes at the end of the document
-PDF_EXPORT <- TRUE
+PDF_EXPORT <- FALSE
 
 # Holds all the links that were inserted for placement at the end
 links <- c()
@@ -125,7 +125,7 @@ Xuan You (XY) Lim {#title}
 # I am a student interested in combining my technical knowledge and domain knowledge in journalism to improve news consumption experience. 
 # Currently looking for a software engineering internship position for summer 2020 and/or academic year 2020-21. 
 # Currently looking for an editorial internship position for summer 2020 and/or academic year 2020-21. 
-intro_text <- "Currently looking for a software/editorial internship position for summer 2020 and/or academic year 2020-21. "
+intro_text <- "Currently looking for a software engineering internship position for summer 2020 and/or academic year 2020-21."
 
 
 cat(sanitize_links(intro_text))
@@ -139,7 +139,13 @@ Education {data-icon=graduation-cap data-concise=true}
 ```{r}
 position_data %>% print_section('education')
 ```
+Selected Projects {data-icon=file}
+--------------------------------------------------------------------------------
 
+
+```{r}
+position_data %>% print_section('projects')
+```
 
 Selected Experiences {data-icon=briefcase}
 --------------------------------------------------------------------------------
@@ -148,13 +154,7 @@ Selected Experiences {data-icon=briefcase}
 position_data %>% print_section('positions')
 ```
 
-Selected Projects {data-icon=file}
---------------------------------------------------------------------------------
 
-
-```{r}
-position_data %>% print_section('projects')
-```
 
 <!-- Selected Writing {data-icon=newspaper} -->
 <!-- -------------------------------------------------------------------------------- -->
