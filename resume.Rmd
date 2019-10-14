@@ -6,7 +6,7 @@ output:
   pagedown::html_resume:
     css: ['css/custom_resume.css', 'css/styles.css', 'resume']
     # set it to true for a self-contained HTML page but it'll take longer to render
-    self_contained: false
+    self_contained: true
 
 ---
 
@@ -20,7 +20,7 @@ library(tidyverse)
 library(glue)
 
 # Set this to true to have links turned into footnotes at the end of the document
-PDF_EXPORT <- FALSE
+PDF_EXPORT <- TRUE
 
 # Holds all the links that were inserted for placement at the end
 links <- c()
@@ -56,10 +56,11 @@ Contact {#contact}
 
 
 - <i class="fa fa-envelope"></i> xuanyoulim@gmail.com
-- <i class="fa fa-twitter"></i> xuanyoulim
-- <i class="fa fa-github"></i> github.com/xuanyoulim
-- <i class="fa fa-link"></i> [xuanyoulim.com](http://xuanyoulim.com/)
 - <i class="fa fa-phone"></i> (206) 457-3246
+- <i class="fa fa-twitter"></i> @xuanyoulim
+<!-- - <i class="fa fa-github"></i> github.com/xuanyoulim -->
+<!-- - <i class="fa fa-link"></i> [xuanyoulim.com](http://xuanyoulim.com/) -->
+- <i class="fa fa-newspaper"></i> muckrack.com/xuanyoulim
 
 
 
@@ -70,13 +71,13 @@ Language Skills {#skills}
 ```{r}
 skills <- tribble(
   ~skill,               ~level,
-  "R",                  5,
-  "Javascript (d3.js)", 4.5,
-  "Python",             4,
-  "Bash",               3.5,
-  "SQL",                3,
-  "C++",                3,
-  "AWK",                3
+  "C",                  5,
+  "Java",               4.5,
+  "C++",                4,
+  "Javascript",         3,
+  "HTML",               3,
+  "CSS",                3,
+  "PHP",                3
 )
 build_skill_bars(skills)
 ```
@@ -97,13 +98,13 @@ build_skill_bars(skills)
 More info {#more-info}
 --------------------------------------------------------------------------------
 
-See full CV at nickstrayer.me/cv for more complete list of positions and publications.
+See full resume at [github.com/xuanyoulim/cv](github.com/xuanyoulim/cv).
 
 
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
 
-Made w/ [**pagedown**](https://github.com/rstudio/pagedown). 
+Made w/ [pagedown](https://github.com/rstudio/pagedown) & [Lexend](https://lexend.com)
 
 Source code: [github.com/xuanyoulim/cv](https://github.com/xuanyoulim/cv).
 
@@ -117,14 +118,14 @@ Last updated on `r Sys.Date()`.
 Main
 ================================================================================
 
-Xuan You Lim {#title}
+Xuan You (XY) Lim {#title}
 --------------------------------------------------------------------------------
 
 ```{r}
-intro_text <- "I have made [visualizations viewed by hundreds of thousands of people](https://www.nytimes.com/interactive/2016/08/26/us/college-student-migration.html), [sped up query times for 25 terabytes of data by an average of 4,800 times](https://livefreeordichotomize.com/2019/06/04/using_awk_and_r_to_parse_25tb/), and built [packages for R](https://github.com/nstrayer/shinysense) that let you [do magic](http://nickstrayer.me/dataDayTexas/).
-
-Currently searching for a data science position that allows me to build tools using visualization and machine learning to help people explore and understand their data. 
-"
+# I am a student interested in combining my technical knowledge and domain knowledge in journalism to improve news consumption experience. 
+# Currently looking for a software engineering internship position for summer 2020 and/or academic year 2020-21. 
+# Currently looking for an editorial internship position for summer 2020 and/or academic year 2020-21. 
+intro_text <- "Currently looking for a software/editorial internship position for summer 2020 and/or academic year 2020-21. "
 
 
 cat(sanitize_links(intro_text))
@@ -140,20 +141,19 @@ position_data %>% print_section('education')
 ```
 
 
+Selected Experiences {data-icon=briefcase}
+--------------------------------------------------------------------------------
+
+```{r}
+position_data %>% print_section('positions')
+```
+
 Selected Projects {data-icon=file}
 --------------------------------------------------------------------------------
 
 
 ```{r}
 position_data %>% print_section('projects')
-```
-
-
-Selected Experiences {data-icon=briefcase}
---------------------------------------------------------------------------------
-
-```{r}
-position_data %>% print_section('positions')
 ```
 
 <!-- Selected Writing {data-icon=newspaper} -->
