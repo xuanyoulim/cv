@@ -37,6 +37,7 @@ position_data <- read_csv('positions.csv') %>%
     section = case_when(
       section %in% c('uw_positions', 'writing_positions', 'tech_positions') ~ 'positions', 
       section %in% c('uw_projects', '42_projects', 'side_projects') ~ 'projects',
+      #section %in% c('425_writings', 'daily_writings') ~ 'writings', 
       TRUE ~ section
    )
   ) 
@@ -57,27 +58,33 @@ Contact {#contact}
 
 - <i class="fa fa-envelope"></i> xuanyoulim@gmail.com
 - <i class="fa fa-phone"></i> (206) 457-3246
+- <i class="fa fa-linkedin"></i> xuanyoulim
 - <i class="fa fa-twitter"></i> @xuanyoulim
-<!-- - <i class="fa fa-github"></i> github.com/xuanyoulim -->
+- <i class="fa fa-github"></i> github.com/xuanyoulim
 <!-- - <i class="fa fa-link"></i> [xuanyoulim.com](http://xuanyoulim.com/) -->
 - <i class="fa fa-newspaper"></i> muckrack.com/xuanyoulim
 
+Relevant Coursework {#coursework}
+--------------------------------------------------------------------------------
 
+Data structures & Algorithm<br>
+Systems Programming<br>
+Database Systems<br>
+Web Programming<br>
+Embedded System
 
-Language Skills {#skills}
+Language Familiarity {#skills}
 --------------------------------------------------------------------------------
 
 
 ```{r}
 skills <- tribble(
   ~skill,               ~level,
-  "C",                  5,
-  "Java",               4.5,
-  "C++",                4,
-  "Javascript",         3,
-  "HTML",               3,
-  "CSS",                3,
-  "PHP",                3
+  "Java",                  5,
+  "Python",               4.5,
+  "C",                   4.5,
+  "Javascript",         4,
+  "HTML/CSS",               3,
 )
 build_skill_bars(skills)
 ```
@@ -125,7 +132,7 @@ Xuan You (XY) Lim {#title}
 # I am a student interested in combining my technical knowledge and domain knowledge in journalism to improve news consumption experience. 
 # Currently looking for a software engineering internship position for summer 2020 and/or academic year 2020-21. 
 # Currently looking for an editorial internship position for summer 2020 and/or academic year 2020-21. 
-intro_text <- "Currently looking for a software engineering internship position for summer 2020 and/or academic year 2020-21."
+intro_text <- "Currently looking for a part time software engineering position during academic year 2020-21 and full time internship opportunities for summer 2021."
 
 
 cat(sanitize_links(intro_text))
