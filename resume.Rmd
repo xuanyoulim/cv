@@ -68,6 +68,7 @@ Relevant Coursework {#coursework}
 --------------------------------------------------------------------------------
 
 Data structures & Algorithm<br>
+Artificial Intelligence (AI)<br>
 Systems Programming<br>
 Database Systems<br>
 Web Programming<br>
