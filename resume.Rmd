@@ -62,17 +62,19 @@ Contact {#contact}
 - <i class="fa fa-twitter"></i> @xuanyoulim
 - <i class="fa fa-github"></i> github.com/xuanyoulim
 <!-- - <i class="fa fa-link"></i> [xuanyoulim.com](http://xuanyoulim.com/) -->
-- <i class="fa fa-newspaper"></i> muckrack.com/xuanyoulim
+<!-- - <i class="fa fa-newspaper"></i> muckrack.com/xuanyoulim -->
 
 Relevant Coursework {#coursework}
 --------------------------------------------------------------------------------
 
 Data structures & Algorithm<br>
-Artificial Intelligence (AI)<br>
 Systems Programming<br>
 Database Systems<br>
 Web Programming<br>
-Embedded System
+Artificial Intelligence (AI)<br>
+Data Visualization<br>
+Embedded System<br>
+Networks
 
 Language Familiarity {#skills}
 --------------------------------------------------------------------------------
@@ -81,10 +83,10 @@ Language Familiarity {#skills}
 ```{r}
 skills <- tribble(
   ~skill,               ~level,
-  "Java",                  5,
-  "Python",               4.5,
+  "Python",                  5,
+  "Javascript",               4.5,
   "C",                   4.5,
-  "Javascript",         4,
+  "Java",         4,
   "HTML/CSS",               3,
 )
 build_skill_bars(skills)
@@ -106,7 +108,7 @@ build_skill_bars(skills)
 More info {#more-info}
 --------------------------------------------------------------------------------
 
-See full resume at [github.com/xuanyoulim/cv](github.com/xuanyoulim/cv).
+See full resume at [github.com/xuanyoulim/cv](https://github.com/xuanyoulim/cv/blob/master/full_resume.pdf).
 
 
 Disclaimer {#disclaimer}
@@ -133,7 +135,8 @@ Xuan You (XY) Lim {#title}
 # I am a student interested in combining my technical knowledge and domain knowledge in journalism to improve news consumption experience. 
 # Currently looking for a software engineering internship position for summer 2020 and/or academic year 2020-21. 
 # Currently looking for an editorial internship position for summer 2020 and/or academic year 2020-21. 
-intro_text <- "Currently looking for a part time software engineering position during academic year 2020-21 and full time internship opportunities for summer 2021."
+intro_text <- "Currently looking for software engineering internships in 2021 & full time opportunities in 2022. 
+Particularly experienced in data wrangling/ETL process with Python and data visualization with D3.js."
 
 
 cat(sanitize_links(intro_text))
